@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Download Certificate</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: white;
+        }
+
+        .download-btn {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #1976D2;
+        }
+    </style>
+</head>
+<body>
+    <button class="download-btn" onclick="downloadCertificate()">Download Certificate</button>
+
+    <script>
+        function downloadCertificate() {
+            // Replace 'certificate.pdf' with the actual path to your PDF file
+            const pdfUrl = 'certificate.pdf';
+            
+            // Create a temporary link element
+            const link = document.createElement('a');
+            link.href = pdfUrl;
+            link.download = 'certificate.pdf'; // The name of the downloaded file
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
